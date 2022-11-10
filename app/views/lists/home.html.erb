@@ -1,0 +1,15 @@
+<h1>All your Lists</h1>
+<u>
+  <% @lists.each do |list|%>
+    <li>
+      <%= link_to list.name, list_path(list) %>
+      <%= link_to "",
+          list_path(list),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "fa-solid fa-trash" %>
+    </li>
+  <% end %>
+</u>
+<div class="container">
+  <p><%= link_to 'New list', lists_new_path %></p>
+</div>

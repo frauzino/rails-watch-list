@@ -1,0 +1,6 @@
+<%= simple_form_for (@list) do |f| %>
+  <%= f.input :name, as: :text %>
+  <%= f.submit 'Create your List'%>
+<% end %>
+
+<p><%= link_to 'home', root_path %></p>
