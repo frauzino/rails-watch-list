@@ -19,7 +19,4 @@ movies.each do |movie|
 
   )
 
-List.create(
-  name: 'Test List'
-)
 end
