@@ -1,2 +1,14 @@
-<%= @list.name %>
+<h1><%= @list.name %></h1>
+<h4>
+  <ul>
+    <% @list.bookmarks.each do |bookmark|%>
+      <li>
+        <%= bookmark.movie.title %>
+        <%= bookmark.comment %>
+      </li>
+      <% end %>
+  </ul>
+</h4>
+
+<p><%= link_to 'New Bookmark', new_list_bookmark_path(@list) %></p>
 <p><%= link_to 'home', root_path %></p>

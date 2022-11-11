@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   before_action :set_list, only: %i[show destroy]
 
-  def home
+  def index
     @lists = List.all
   end
 
