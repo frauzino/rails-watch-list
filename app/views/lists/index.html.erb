@@ -1,15 +1,23 @@
-<h1>All your Lists</h1>
-<u>
-  <% @lists.each do |list|%>
-    <li>
-      <%= link_to list.name, list_path(list) %>
-      <%= link_to "",
-          list_path(list),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-          class: "fa-solid fa-trash" %>
-    </li>
-  <% end %>
-</u>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(..../assets/images/cinema.jpg);">
+  <div class="container">
+    <h1>All your Lists</h1>
+    <p>Create your own lists and bookmarks</p>
+    <a class="btn btn-primary" href=new_list_path>Create a list</a>
+  </div>
+</div>
 <div class="container">
-  <p><%= link_to 'New list', new_list_path %></p>
+  <div class="container-2">
+    <div class="d-flex flex-wrap justify-content-center">
+      <% @lists.each do |list|%>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= link_to list.name, list_path(list) %>
+          <%= link_to "",
+              list_path(list),
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "fa-solid fa-trash" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
